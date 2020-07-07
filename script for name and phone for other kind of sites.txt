@@ -1,0 +1,18 @@
+//for ...
+var x= $(".box-container.__container")
+var myarray = []
+for (var i=0; i<x.length; i++){
+var cleantext = x[i].querySelectorAll(".company-name")[0].innerText;
+var cleanlink = x[i].querySelectorAll(".number-mobile")[0].href;
+myarray.push([cleantext,cleanlink]);
+};
+function make_table() {
+    var table = '<table><thead><th>Name ,</th><th>Links</th></thead><tbody>';
+   for (var i=0; i<myarray.length; i++) {
+            table += '<tr><td>'+ myarray[i][0] + '</td><td>,</td><td>' +myarray[i][1]+'</td></tr>';
+    };
+ 
+    var w = window.open("");
+w.document.write(table); 
+}
+make_table()
